@@ -151,4 +151,28 @@ print(some_set)
 some_set.add(False)
 print(some_set)
 
+playlist = {
+    'Venus',
+    'Yesterday',
+    'Fireball',
+    'Time',
+    'Poison',
+    'Thunderstruck'
+}
+new_music = [
+    'Kashmir',
+    'Smoke on the Water',
+    'Bohemian Rhapsody',
+    'Zombie',
+    'Let It Be',
+    'Its My Life',
+]
+for i in new_music:
+    if i not in playlist:
+        playlist.add(i)
+    # Здесь ваш код
+
+print(playlist)
+
+
 

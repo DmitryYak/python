@@ -174,5 +174,9 @@ for i in new_music:
 
 print(playlist)
 
+new_music.append(('nose mc'))
+print(new_music)
 
+playlist.add('nose mc')
+print(playlist)
 

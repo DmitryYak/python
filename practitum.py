@@ -180,3 +180,87 @@ print(new_music)
 playlist.add('nose mc')
 print(playlist)
 
+for i in new_music:
+    print(i)
+    if 'nose mc' in new_music:
+        print('nose has in this playlst')
+
+friends = {
+    'Серёга': 'Омск',
+    'Соня': 'Москва',
+    'Дима': 'Челябинск',
+    'Алина': 'Хабаровск',
+    'Егор': 'Пермь'
+}
+
+
+def is_anyone_in(collection, city):
+    for friend in friends:
+        if not collection[friend] == city:
+            print('В городе', collection[friend], 'у меня есть друг, но мне туда не надо.')
+        else:
+            print('В городе', collection[friend], ' живёт '+ friend + '. Обязательно зайду в гости!')
+
+
+is_anyone_in(friends, 'Хабаровск')
+
+print(friends["Серёга"])
+
+
+my_collegue = {
+    'Alex': 'python',
+    'Dima': 'JS',
+    'Alex Nik': 'devops',
+    'Tatiana': 'accountant',
+    'Vitalik': True
+}
+
+def who_is(who, position):
+    for i in who:
+        if who[i] == position:
+            print(i, 'helps me to study', who[i])
+
+who_is(my_collegue, 'python')
+
+def count_coll(how, friends):
+    if how == "how many friends":
+        print(len(friends))
+
+count_coll("how many friends", my_collegue)
+
+DATABASE = {
+    'Серёга': 'Омск',
+    'Соня': 'Москва',
+    'Миша': 'Москва',
+    'Дима': 'Челябинск',
+    'Алина': 'Красноярск',
+    'Егор': 'Пермь',
+    'Коля': 'Красноярск'
+}
+
+def process_anfisa(query):
+    if query == 'Сколько у меня друзей?':
+        count = len(DATABASE)
+        return 'У тебя ' + str(count) + ' друзей.'
+    # Здесь проверьте, что переменная query равна строке 'Кто все мои друзья?'
+    elif query == 'Кто все мои друзья?':
+        friends_string = ''
+        # Чтобы получить перечень друзей -
+        # переберите словарь DATABASE в цикле
+        for i in DATABASE:
+            friends_string += i + " "     # Добавляйте к переменной friends_string имя друга и пробел
+        # Верните строку, составленную из 'Твои друзья: ' и friends_string
+        return'Твои друзья: '+  friends_string
+    elif query == 'Где все мои друзья?':
+        for city in DATABASE.value():
+            print(city)
+    else:
+        return '<неизвестный запрос>'
+
+# Не изменяйте следующий код
+print('Привет, я Анфиса!')
+print(process_anfisa('Сколько у меня друзей?'))
+print(process_anfisa('Кто все мои друзья?'))
+# print(process_anfisa('Где все мои друзья?'))
+
+print(DATABASE.values())

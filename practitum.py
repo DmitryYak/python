@@ -264,3 +264,199 @@ print(process_anfisa('Кто все мои друзья?'))
 # print(process_anfisa('Где все мои друзья?'))
 
 print(DATABASE.values())
+
+string = 'what are you doing'
+
+print(string)
+list_from_string = list(string)
+
+print('list:',  list_from_string)
+
+set_from_string = set(string)
+print('set', str(set_from_string))
+
+print(string.split('d'))
+
+monument_string = 'Я памятник себе воздвиг нерукотворный'
+
+index_list = [0, 1, 2, 8, 6, 17, 24]
+
+for i in index_list:
+    # На каждой итерации цикла
+    # берём из строки monument_string элемент с индексом i и печатаем полученную букву
+    print(monument_string[i])
+
+
+some_string = 'good morning'
+
+short_str = [1, 2, 5, -5]
+
+for l in short_str:
+    print(some_string[l])
+
+milk = 'molokovoz'
+
+new_milk = milk.split('o')
+print(new_milk)
+
+counter_str = 'Раз-два-  три-четыре-пять,  вышел  зайчик погулять'
+
+new_counter = counter_str.split(' ')
+print(new_counter)
+
+word_list_count = counter_str.split()
+print(word_list_count)
+
+new_join = ' '.join(word_list_count)
+print(new_join)
+
+def check_query(query):
+# Допишите код тела функции
+    elements  = query.split(', ')
+    if elements[0] == 'Анфиса':
+        return 'запрос к Анфисе'
+    else:
+        return 'запрос к кому-то ещё'
+
+
+
+
+# Дальше следует код, вызывающий вашу функцию; не изменяйте его:
+queries = [
+    'Анфиса, сколько у меня друзей?',
+    'Андрей, ну где ты был?',
+    'Андрей, ну обними меня скорей!',
+    'Анфиса, кто все мои друзья?'
+]
+
+# Напечатаем результат.
+# Переберём список вопросов в цикле
+for q in queries:
+    # Каждый из вопросов передадим аргументом
+    # в функцию check_query()
+    result = check_query(q)
+    # И для каждого вызова напечатаем вопрос и, через дефис - вердикт программы
+    print(q, '-', result)
+
+DATABASE = {
+    'Серёга': 'Омск',
+    'Соня': 'Москва',
+    'Миша': 'Москва',
+    'Дима': 'Челябинск',
+    'Алина': 'Красноярск',
+    'Егор': 'Пермь',
+    'Коля': 'Красноярск'
+}
+
+
+def process_anfisa(query):
+    if query == 'Сколько у меня друзей?':
+        count = len(DATABASE)
+
+        return 'У тебя ' + str(count) + ' друзей.'
+    elif query == 'Кто все мои друзья?':
+        # Из словаря DATABASE создайте строку с помощью join();
+        # имена друзей разделите запятой и пробелом.
+        # Запишите эту строку в переменную friends_string (вместо пустых кавычек).
+        friends_string = ', '.join(DATABASE)
+
+        # Этот цикл больше не понадобится, удалите его
+
+        return 'Твои друзья: ' + friends_string
+    elif query == 'Где все мои друзья?':
+        unique_cities = set(DATABASE.values())
+        # Из сета unique_cities создайте строку с помощью join();
+        # названия городов разделите запятой и пробелом.
+        # Запишите эту строку в переменную cities_string (вместо пустых кавычек).
+        cities_string = ', '.join(unique_cities)
+
+        # Этот цикл больше не понадобится, удалите его
+
+        return 'Твои друзья в городах: ' + cities_string
+    else:
+        return '<неизвестный запрос>'
+
+
+print('Привет, я Анфиса!')
+print(process_anfisa('Сколько у меня друзей?'))
+print(process_anfisa('Кто все мои друзья?'))
+print(process_anfisa('Где все мои друзья?'))
+
+numbers_2 = [123, 132, 2342, 21]
+print(type(numbers_2))
+
+def calc_stat(listened):  # От англ. calculate statistics, посчитать статистику
+    # Напишите код функции calc_stat()
+    summer = 0
+    for i in listened:
+        summer += i
+    return f'Вы прослушали {len(listened)} песен общей продолжительностью {int(summer / 60)} минут.'
+
+print(calc_stat([189, 148, 210, 144, 174, 158, 163, 189, 227, 198]))
+
+
+DATABASE = {
+    'Серёга': 'Омск',
+    'Соня': 'Москва',
+    'Миша': 'Москва',
+    'Дима': 'Челябинск',
+    'Алина': 'Красноярск',
+    'Егор': 'Пермь',
+    'Коля': 'Красноярск'
+}
+
+def process_anfisa(query):
+    if query == 'Сколько у меня друзей?':
+        count = len(DATABASE)
+        # В следующей строке замените конкатенацию на f-строку
+        return 'У тебя ' + str(count) + ' друзей.'
+    elif query == 'Кто все мои друзья?':
+        friends_string = ', '.join(DATABASE)
+        # В следующей строке замените конкатенацию на f-строку
+        return 'Твои друзья: ' + friends_string
+    elif query == 'Где все мои друзья?':
+        unique_cities = set(DATABASE.values())
+        cities_string = ', '.join(unique_cities)
+        # В следующей строке замените конкатенацию на f-строку
+        return 'Твои друзья в городах: ' + cities_string
+    else:
+        return '<неизвестный запрос>'
+
+
+print('Привет, я Анфиса!')
+print(process_anfisa('Сколько у меня друзей?'))
+print(process_anfisa('Кто все мои друзья?'))
+print(process_anfisa('Где все мои друзья?'))
+
+DATABASE = {
+    'Серёга': 'Омск',
+    'Соня': 'Москва',
+    'Миша': 'Москва',
+    'Дима': 'Челябинск',
+    'Алина': 'Красноярск',
+    'Егор': 'Пермь',
+    'Коля': 'Красноярск'
+}
+
+def process_anfisa(query):
+    if query == 'Сколько у меня друзей?':
+        count = len(DATABASE)
+        # В следующей строке замените конкатенацию на f-строку
+        return f'У тебя {str(count)} друзей.'
+    elif query == 'Кто все мои друзья?':
+        friends_string = ', '.join(DATABASE)
+        # В следующей строке замените конкатенацию на f-строку
+        return f'Твои друзья: {friends_string}'
+    elif query == 'Где все мои друзья?':
+        unique_cities = set(DATABASE.values())
+        cities_string = ', '.join(unique_cities)
+        # В следующей строке замените конкатенацию на f-строку
+        return f'Твои друзья в городах: {cities_string}'
+    else:
+        return '<неизвестный запрос>'
+
+
+print('Привет, я Анфиса!')
+print(process_anfisa('Сколько у меня друзей?'))
+print(process_anfisa('Кто все мои друзья?'))
+print(process_anfisa('Где все мои друзья?'))

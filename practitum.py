@@ -45,6 +45,8 @@
 #
 # print(playlist_3)
 #
+import datetime
+
 english = {
     'рука': 'arm',
     'нога': 'leg',
@@ -460,3 +462,161 @@ print('Привет, я Анфиса!')
 print(process_anfisa('Сколько у меня друзей?'))
 print(process_anfisa('Кто все мои друзья?'))
 print(process_anfisa('Где все мои друзья?'))
+
+DATABASE = {
+    'Серёга': 'Омск',
+    'Соня': 'Москва',
+    'Миша': 'Москва',
+    'Дима': 'Челябинск',
+    'Алина': 'Красноярск',
+    'Егор': 'Пермь',
+    'Коля': 'Красноярск'
+}
+
+
+# Новая функция, она возвращает правильное словосочетание, склоняя слово "друзья"
+# в зависимости от того, какое число передано в аргументе friends_count
+def process_query(query):
+    twice_el = query.split(', ')
+    if twice_el[0] == 'Анфиса':
+        return process_anfisa(twice_el[1])
+    else:
+        return process_friend(twice_el[0], twice_el[1])
+
+
+def process_friend(name, query):
+    if name in DATABASE:
+        # for i in DATABASE.keys():
+        # if i == name:
+        if query == 'ты где?':
+            city = DATABASE[name]
+            return f'{name} в городе {city}'
+        else:
+            return '<неизвестный запрос>'
+
+    else:
+        return f'У тебя нет друга по имени {name}'
+
+
+def format_friends_count(friends_count):
+    if friends_count == 1:
+        return '1 друг'
+    elif 2 <= friends_count <= 4:
+        return f'{friends_count} друга'
+    else:
+        return f'{friends_count} друзей'
+
+
+def process_anfisa(query):
+    if query == 'сколько у меня друзей?':
+        count = len(DATABASE)
+        # Вызовите функцию format_friends_count() и передайте в неё count.
+        # Отредактируйте строку ниже: в ней должно использоваться выражение,
+        # которое вернёт функция format_friends_count()
+        return f'У тебя {format_friends_count(count)}.'
+    elif query == 'кто все мои друзья?':
+        friends_string = ', '.join(DATABASE)
+        return f'Твои друзья: {friends_string}'
+    elif query == 'где все мои друзья?':
+        unique_cities = set(DATABASE.values())
+        cities_string = ', '.join(unique_cities)
+        return f'Твои друзья в городах: {cities_string}'
+    else:
+        return '<неизвестный запрос>'
+
+
+print('Привет, я Анфиса!')
+print(process_query('Анфиса, сколько у меня друзей?'))
+print(process_query('Анфиса, кто все мои друзья?'))
+print(process_query('Анфиса, где все мои друзья?'))
+print(process_query('Анфиса, кто виноват?'))
+print(process_query('Соня, ты где?'))
+print(process_query('Коля, что делать?'))
+print(process_query('Антон, ты где?'))
+
+
+# Подключите библиотеку random и дайте ей краткое имя
+import random as r
+answers = ['Норм.', 'Лучше всех :)', 'Ну так', 'Отличненько!', 'Ничего, жить буду']
+
+def how_are_you():
+    return r.choice(answers)
+
+import datetime as dt
+
+tommorow_morning = dt.datetime(2023,4,25)
+print(tommorow_morning)
+
+my_time = datetime.datetime.utcnow()
+period = datetime.timedelta(hours=3)
+moscow_time = my_time + period
+print(moscow_time)
+
+
+import datetime as dt
+
+UTC_OFFSET = {
+    'Санкт-Петербург': 3,
+    'Москва': 3,
+    'Самара': 4,
+    'Новосибирск': 7,
+    'Екатеринбург': 5,
+    'Нижний Новгород': 3,
+    'Казань': 3,
+    'Челябинск': 5,
+    'Омск': 6,
+    'Ростов-на-Дону': 3,
+    'Уфа': 5,
+    'Красноярск': 7,
+    'Пермь': 5,
+    'Воронеж': 3,
+    'Волгоград': 3,
+    'Краснодар': 3,
+    'Калининград': 2
+}
+def what_time(city):
+    if city in UTC_OFFSET:
+        time_now = dt.datetime.utcnow()
+        return time_now + dt.timedelta(hours = UTC_OFFSET[city])
+    # Напишите код тела функции;
+    # она должна вернуть текущее время в городе city
+
+print(what_time('Екатеринбург'))
+
+import datetime as dt
+
+DATABASE = {
+    'Серёга': 'Омск',
+    'Соня': 'Москва',
+    'Дима': 'Челябинск',
+    'Алина': 'Красноярск',
+    'Егор': 'Пермь'
+}
+
+UTC_OFFSET = {
+    'Санкт-Петербург': 3,
+    'Москва': 3,
+    'Самара': 4,
+    'Новосибирск': 7,
+    'Екатеринбург': 5,
+    'Нижний Новгород': 3,
+    'Казань': 3,
+    'Челябинск': 5,
+    'Омск': 6,
+    'Ростов-на-Дону': 3,
+    'Уфа': 5,
+    'Красноярск': 7,
+    'Пермь': 5,
+    'Воронеж': 3,
+    'Волгоград': 3,
+    'Краснодар': 3,
+    'Калининград': 2
+}
+
+def what_time(friend):
+    if friend in DATABASE:
+        my_friend = DATABASE[friend]
+        time_utc = dt.datetime.utcnow()
+        return time_utc + dt.timedelta(hours = UTC_OFFSET[my_friend])
+    # напишите код тела функции
+    # пусть она вернет время у друга из аргумента friend

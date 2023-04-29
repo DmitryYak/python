@@ -788,3 +788,12 @@ def runner():
 
 runner()
 
+#У вас есть запрос «как стать бэкенд-разработчиком». Соберите URL страницы, на которой Яндекс покажет результаты поиска по этому запросу.
+
+user_query = 'как стать бэкенд-разработчиком'
+
+url = 'https://yandex.ru/search/?text='
+new = user_query.split(' ')
+new_string = '%20'.join(new)
+# ваш код здесь
+print(url+new_string)

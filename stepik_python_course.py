@@ -304,3 +304,28 @@ print(9%7)
 #     print('YES')
 # else:
 #     print('NO')
+
+# Напишите программу, которая определяет наименьшее из двух чисел.
+# 
+# a = int(input())
+# b = int(input())
+# if a < b:
+#     print(a)
+# else:
+#     print(b)
+
+# Напишите программу, которая определяет наименьшее из четырёх чисел.
+# 
+# a = int(input())
+# b = int(input())
+# c = int(input())
+# d = int(input())
+
+# if a <= b and a <= c and a <= d:
+#     print(a)
+# elif b <= a and b <= c and b <= d:
+#     print(b)
+# elif c <= a and c <= b and c <= d:
+#     print(c)
+# else:
+#     print(d)

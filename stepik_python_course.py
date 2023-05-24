@@ -347,4 +347,30 @@ print(9%7)
 # else:
 #     print('старость')
 
+# Напишите программу, которая считывает три числа и подсчитывает сумму только положительных чисел.
+# 
+# a = int(input())
+# b = int(input())
+# c = int(input())
+
+# if a > 0 and b > 0 and c > 0:
+#     print(a + b + c)
+# elif a > 0 and c > 0:
+#     print(a + c)
+# elif a > 0 and b > 0:
+#     print(a + b)
+# elif b > 0 and c > 0:
+#     print(b + c)
+# elif a > 0 and b < 0 and c < 0:
+#     print(a)
+# elif a < 0 and b > 0 and c < 0:
+#     print(b)   
+# elif a < 0 and b < 0 and c > 0:
+#     print(c) 
+# elif a < 0 and b < 0 and c > 0:
+#     print(c)      
+# elif a < 0 and b > 0 and c < 0:
+#     print(b)
+# else:
+#     print('0')
 

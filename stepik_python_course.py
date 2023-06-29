@@ -802,4 +802,11 @@ print(y)
 # 
 p1, p2, q1, q2 = int(input()), int(input()), int(input()), int(input())
 print(abs(p1 - q1) + abs(p2 - q2)) 
-    
+
+# What's Your Name?
+# Напишите программу, которая считывает с клавиатуры две строки – имя и фамилию пользователя и выводит фразу:
+# «Hello [введенное имя] [введенная фамилия]! You just delved into Python».
+# 
+name = input()
+lastname = input()
+print(f'Hello {name} {lastname}! You just delved into Python')

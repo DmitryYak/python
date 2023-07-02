@@ -818,3 +818,29 @@ print(f'Hello {name} {lastname}! You just delved into Python')
 team = input()
 length = len(team)
 print(f'Футбольная команда {team} имеет длину {length} символов')
+
+# Три города
+# Даны названия трех городов. Напишите программу, которая определяет самое короткое и самое длинное название города.
+# Формат входных данных
+# На вход программе подаётся названия трех городов, каждое на отдельной строке.
+# Формат выходных данных
+# Программа должна вывести самое короткое и длинное название города, каждое на отдельной строке.
+# 
+a = input()
+b = input()
+c = input()
+if len(a) == (max(len(a), len(b), len(c))):
+    big = a
+elif len(b) == (max(len(a), len(b), len(c))):
+    big = b
+else:
+    big = c
+
+if len(a) == (min(len(a), len(b), len(c))):
+    mini = a
+elif len(b) == (min(len(a), len(b), len(c))):
+    mini = b
+else:
+    mini = c
+print(mini)
+print(big)

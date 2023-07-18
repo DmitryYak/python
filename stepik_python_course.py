@@ -969,3 +969,40 @@ print(math.ceil(x) + math.floor(x))
 # Формат выходных данных
 # Программа должна вывести указанное текстовое предложение нужное количество раз. Каждое повторение должно начинаться с новой строки.
 
+
+
+# Последовательность символов
+# Напишите программу, которая использует ровно три цикла for для печати следующей последовательности символов:
+
+# AAA
+# AAA
+# AAA
+# AAA
+# AAA
+# AAA
+# BBBB
+# BBBB
+# BBBB
+# BBBB
+# BBBB
+# E
+# TTTTT
+# TTTTT
+# TTTTT
+# TTTTT
+# TTTTT
+# TTTTT
+# TTTTT
+# TTTTT
+# TTTTT
+# G
+# 
+for i in range(6):
+    print('AAA')
+for i in range(5):
+    print('BBBB')
+print('E')
+for i in range(9):
+    print('TTTTT')
+print('G')
+

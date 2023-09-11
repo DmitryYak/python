@@ -1147,3 +1147,13 @@ import math
 n = int(input())
 print(math.factorial(n))
 
+# Без нулей
+# Напишите программу, которая считывает
+# 10 чисел и выводит произведение отличных от нуля чисел.
+# 
+s = 1
+for i in range(10):
+    num = int(input())
+    if num != 0:
+        s *= num
+print(s)

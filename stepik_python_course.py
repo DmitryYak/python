@@ -1257,3 +1257,12 @@ while (price != 0):
     price = price % 1
 print(count)
 
+# Обратный порядок 1
+# Дано натуральное число. Напишите программу, которая выводит его цифры в столбик в обратном порядке.
+# 
+num = int(input()) 
+while num != 0:
+    last_num = num % 10
+    print(last_num)
+    num = num // 10
+

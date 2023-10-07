@@ -1275,3 +1275,18 @@ while num !=0:
     print(n, end = '')
     num = num // 10
 
+# max и min
+# Дано натуральное число n,(n ≥ 10). Напишите программу, которая определяет его максимальную и минимальную цифры.
+# 
+num = int(input())
+mi = 10
+big = 0
+while num != 0:
+    n = num % 10
+    if n > big:
+        big = n
+    if n < mi:
+        mi = n
+    num = num // 10
+print(f'Максимальная цифра равна {big}')
+print(f'Минимальная цифра равна {mi}')

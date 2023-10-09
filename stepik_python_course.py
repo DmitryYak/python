@@ -1290,3 +1290,37 @@ while num != 0:
     num = num // 10
 print(f'Максимальная цифра равна {big}')
 print(f'Минимальная цифра равна {mi}')
+
+# Все вместе
+# Дано натуральное число. Напишите программу, которая вычисляет:
+
+# сумму его цифр;
+# количество цифр в нем;
+# произведение его цифр;
+# среднее арифметическое его цифр;
+# его первую цифру;
+# сумму его первой и последней цифры.
+# 
+import math
+num = int(input())
+summ = 0
+count = 0
+comp = 1
+mid = 0
+first = num % 10
+first_last = 0
+while num != 0:
+    a = num % 10
+    b = a
+    num = num // 10
+    summ = summ + a
+    count += 1
+    comp = comp * a
+    mid = (mid + a)
+mid_res = mid / count
+print(summ)
+print(count)
+print(comp)
+print(mid_res)
+print(b)
+print(first + b) 
